@@ -1,0 +1,160 @@
+// Script:    TesteVisivel.script
+// Autores:   Gabriel Siqueira da Silva
+// Data:      13/10/2013
+// Propósito: Testar o módulo visivel
+//
+
+// Preparação do ambiente de testes
+
+== Declarar os valores dos Naipes 
+=declararparm    NaipePaus        int   0
+=declararparm    NaipeEspadas     int   1
+=declararparm    NaipeCopas       int   2
+=declararparm    NaipeOuros       int   3
+
+== Declarar os valores de Ranks 
+=declararparm    RankAs           int   0
+=declararparm    RankDois         int   1
+=declararparm    RankTres         int   2
+=declararparm    RankQuatro       int   3
+=declararparm    RankCinco        int   4
+=declararparm    RankSeis         int   5
+=declararparm    RankSete         int   6
+=declararparm    RankOito         int   7
+=declararparm    RankNove         int   8
+=declararparm    RankDez          int   9
+=declararparm    RankValete       int   10
+=declararparm    RankRainha       int   11
+=declararparm    RankRei          int   12
+
+== Declarar as posicoes de insercao/remocao
+=declararparm    inxCarta0		  int   0 
+=declararparm    inxCarta1        int   1
+=declararparm    inxCarta2        int   2
+=declararparm    inxCarta3        int   3
+=declararparm    inxCarta4        int   4
+=declararparm	 inxCarta18		  int   18
+
+== Inicializa os modos de inserção
+=declararparm	comOrdem		  int 	0	
+=declararparm	semOrdem 	      int 	1
+
+== Tipos de retorno
+=declararparm   OK             	  int   0
+=declararparm	NaoOK			  int   1
+=declararparm   FaltouMemoria  	  int   2
+=declararparm   CartaInvalida  	  int   3
+=declararparm	ModoInvalido	  int   4
+=declararparm   VisivelVazia   	  int   5
+
+== Inicializar valores visivel
+=declararparm   inxVisivel0   int 0
+=declararparm   inxVisivel1   int 1
+=declararparm   inxVisivel2   int 2
+=declararparm   inxVisivel3   int 3
+=declararparm   inxVisivel4   int 4
+=declararparm   inxVisivel5   int 5
+=declararparm   inxVisivel6   int 6
+=declararparm   inxVisivel7   int 7
+=declararparm   inxVisivel8   int 8
+=declararparm   inxVisivel9   int 9
+=declararparm   inxVisivel10  int 10
+
+// Início dos testes
+
+== Reseta o teste
+=resetteste
+
+== Cria uma visivel e depois destroi ela
+=criarvisivel     inxVisivel0
+=destruirvisivel  inxVisivel0
+
+== Cria uma visivel e insere duas cartas quaisquer nela
+=criarvisivel		inxVisivel1
+=inserircarta		inxVisivel1  NaipeCopas	 RankTres	OK  semOrdem
+=inserircarta		inxVisivel1  NaipeOuros	 RankDez	OK	semOrdem
+=destruirvisivel 	inxVisivel1
+
+== Cria uma visivel, insere duas cartas seguindo as regras do jogo
+=criarvisivel       inxVisivel2
+=inserircarta 	 	inxVisivel2  NaipeOuros    RankRei     OK 	semOrdem
+=inserircarta  	    inxVisivel2  NaipeEspadas  RankRainha  OK 	comOrdem
+=destruirvisivel    inxVisivel2
+
+== Cria uma visivel, insere duas cartas indo contra as regras do jogo
+=criarvisivel     	inxVisivel3
+=inserircarta   	inxVisivel3  NaipeOuros	 RankRei	 OK 			semOrdem
+=inserircarta   	inxVisivel3  NaipeOuros	 RankRainha  CartaInvalida 	comOrdem
+=destruirvisivel  	inxVisivel3
+
+== Cria uma visivel com uma carta e tenta remover o topo (pos 0)
+=criarvisivel     	inxVisivel4
+=inserircarta   	inxVisivel4  NaipeCopas  RankAs	OK 	semOrdem
+=removercarta   	inxVisivel4  OK
+=destruirvisivel  	inxVisivel4
+
+== Cria uma visivel sem carta e tenta remover o topo
+=criarvisivel     	inxVisivel5
+=removercarta   	inxVisivel5  VisivelVazia
+=destruirvisivel  	inxVisivel5
+
+== Cria uma visivel com uma carta e tenta ver o topo
+=criarvisivel      	inxVisivel6
+=inserircarta   	inxVisivel6  NaipeCopas	RankAs		OK 		semOrdem
+=obtercartapos  	inxVisivel6  inxCarta0	NaipeCopas	RankAs
+=destruirvisivel   	inxVisivel6
+
+== Cria uma visivel sem carta e tenta ver o topo
+=criarvisivel       inxVisivel7
+=obtervaziopos  	inxVisivel7  inxCarta0 
+=destruirvisivel    inxVisivel7
+
+== Cria uma visivel com duas cartas e tenta ver a pos 1
+=criarvisivel      	inxVisivel8
+=inserircarta   	inxVisivel8  NaipeCopas	 RankAs		 OK 	 semOrdem
+=inserircarta   	inxVisivel8  NaipeOuros	 RankRei	 OK 	 semOrdem
+=obtercartapos  	inxVisivel8  inxCarta1   NaipeCopas  RankAs
+=destruirvisivel   	inxVisivel8
+
+== Cria uma visivel uma carta e tenta ver pos 1 (que esta vazia)
+=criarvisivel      	inxVisivel9
+=inserircarta   	inxVisivel9  NaipeCopas	RankAs	OK 	semOrdem
+=obtervaziopos  	inxVisivel9  inxCarta1
+=destruirvisivel   	inxVisivel9
+
+== Cria uma visivel com maior qtd possivel de cartas
+=criarvisivel      	inxVisivel10
+=inserircarta   	inxVisivel10  NaipeEspadas	RankAs		OK 	semOrdem
+=inserircarta   	inxVisivel10  NaipeEspadas	RankRei		OK 	semOrdem
+=inserircarta   	inxVisivel10  NaipeEspadas	RankDois	OK 	semOrdem
+=inserircarta   	inxVisivel10  NaipeEspadas	RankCinco	OK 	semOrdem
+=inserircarta   	inxVisivel10  NaipeEspadas	RankDez		OK 	semOrdem
+=inserircarta   	inxVisivel10  NaipeEspadas	RankRainha	OK 	semOrdem
+=inserircarta   	inxVisivel10  NaipeCopas	RankRei		OK 	semOrdem
+=inserircarta		inxVisivel10  NaipePaus	    RankRainha  OK  comOrdem
+=inserircarta   	inxVisivel10  NaipeCopas	RankValete	OK 	comOrdem
+=inserircarta		inxVisivel10  NaipePaus	    RankDez		OK  comOrdem
+=inserircarta   	inxVisivel10  NaipeCopas	RankNove	OK 	comOrdem
+=inserircarta		inxVisivel10  NaipePaus	    RankOito    OK  comOrdem
+=inserircarta   	inxVisivel10  NaipeCopas	RankSete	OK 	comOrdem
+=inserircarta		inxVisivel10  NaipePaus	    RankSeis    OK  comOrdem
+=inserircarta   	inxVisivel10  NaipeCopas	RankCinco	OK 	comOrdem
+=inserircarta		inxVisivel10  NaipePaus	    RankQuatro  OK  comOrdem
+=inserircarta   	inxVisivel10  NaipeCopas	RankTres	OK 	comOrdem
+=inserircarta		inxVisivel10  NaipePaus	    RankDois    OK  comOrdem
+=inserircarta   	inxVisivel10  NaipeCopas	RankAs		OK 	comOrdem
+
+== Testa obtencao de algumas cartas
+=obtercartapos  	inxVisivel10  inxCarta0	  NaipeCopas    RankAs
+=obtercartapos  	inxVisivel10  inxCarta2	  NaipeCopas    RankTres
+=obtercartapos  	inxVisivel10  inxCarta4	  NaipeCopas  	RankCinco
+=obtercartapos		inxVisivel10  inxCarta18  NaipeEspadas  RankAs
+
+== Testa pior caso de string e destroi a visivel
+=parastring        	inxVisivel10  "PEA PEK PE2 PE5 PET PEQ VCK PPQ VCJ PPT VC9 PP8 VC7 PP6 VC5 PP4 VC3 PP2 VCA"  OK
+=destruirvisivel	inxVisivel10
+
+== Finaliza
+=termina
+
+// fim

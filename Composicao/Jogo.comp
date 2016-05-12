@@ -1,0 +1,31 @@
+
+# Criação do jogo
+
+[Diretorios]
+
+Nome        =  Jogo
+PathDefault =  ..\Fontes
+err         =  ..\Produto
+obj         =  ..\Objetos
+c           =  ..\Fontes
+h           =  ..\Fontes
+def         =  ..\Tabelas
+
+[Modulos]
+CARTA
+LISTA
+EMBARALHAMENTO
+VISIVEL
+ORDENADA
+EXTRAS
+INTERFACE
+FREECELL
+MAIN  
+
+[BuildInicio]
+/OUT:..\Produto\TRAB4-8.exe
+/INCREMENTAL:NO
+/MACHINE:IX86
+
+
+[Fim]

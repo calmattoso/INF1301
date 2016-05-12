@@ -1,0 +1,123 @@
+// Script:    TesteExtra.script
+// Autor:     Carlos Lima Mattoso
+// Data:      12/out/2013
+// Propósito: Testar funções do módulo de sequências extras
+//
+
+// Inicialização do ambiente de testes
+
+== Declarar constante
+=declararparm    null             int   0
+
+== Declarar os espacos extras usadas
+=declararparm    inxExtra0        int   0
+=declararparm    inxExtra1        int   1
+
+== Declarar as posicoes de insercao/remocao
+=declararparm    inxCarta1        int   1
+=declararparm    inxCarta2        int   2
+=declararparm    inxCarta3        int   3
+=declararparm    inxCarta4        int   4
+=declararparm    inxCartaInv	  int   5
+
+== Declarar os valores dos Naipes 
+=declararparm    NaipePaus        int   0
+=declararparm    NaipeEspadas     int   1
+=declararparm    NaipeCopas       int   2
+=declararparm    NaipeOuros       int   3
+
+== Declarar os valores de alguns Ranks 
+=declararparm    RankAs           int   0
+=declararparm    RankDois         int   1
+=declararparm    RankTres         int   2
+=declararparm    RankQuatro       int   3
+=declararparm    RankDez          int   9
+=declararparm    RankRei          int   12
+
+== Declarar condições de retorno
+=declararparm    CondOK           int   0
+=declararparm    CondFaltouMem    int   1
+=declararparm    CondPosInv       int   2
+=declararparm    CondLotados      int   3
+=declararparm    CondVazios       int   4 
+=declararparm    CondFim          int   5
+
+// Execução dos testes
+
+== Inicializa
+=resetteste
+
+== Criar extras
+=criarextras    inxExtra0 
+=criarextras    inxExtra1
+
+== Testar obter numero ocupados inicial
+=obternumocup    inxExtra0   0
+
+== Testar inserir inserir carta 
+=insercartapos   inxExtra0   inxCarta1  NaipePaus  RankAs  CondOK
+=insercartapos   inxExtra0   inxCarta4  NaipeCopas  RankRei  CondOK
+
+== Testar inserir carta em posicao ocupada
+=insercartapos  inxExtra0  inxCarta1  NaipeEspadas RankDez CondPosInv
+
+== Testar obter numero ocupados apos insercoes
+=obternumocup    inxExtra0   2
+
+== Testar obter carta (checa se inseriu direito)
+=obtercartapos   inxExtra0   inxCarta1  NaipePaus  RankAs
+=obtercartapos   inxExtra0   inxCarta4  NaipeCopas  RankRei
+
+== Checar posição vazia
+=obtervaziapos	 inxExtra0   inxCarta2
+
+== Testar conversao pra string
+=parastring		 inxExtra0   "PPA --- --- VCK"  CondOK
+
+== Lota os extras
+=insercartapos   inxExtra0   inxCarta2  NaipePaus  RankQuatro  CondOK
+=insercartapos   inxExtra0   inxCarta3  NaipeEspadas  RankDez  CondOK
+
+== Checa que atualizou o numero de extras ocupados
+=obternumocup    inxExtra0   4
+
+== Testar conversao pra string
+=parastring		 inxExtra0   "PPA PP4 PET VCK"  CondOK
+
+== Tenta inserir em extras lotados
+=insercartapos   inxExtra0   inxCarta2  NaipeCopas  RankRei  CondLotados
+
+== Testar remocao de carta
+=removcartapos	 inxExtra0   inxCarta1    CondOK  
+=removcartapos   inxExtra0   inxCarta4	  CondOK
+=removcartapos   inxExtra0   inxCarta2    CondOK
+=removcartapos	 inxExtra0	 inxCarta1    CondPosInv
+=removcartapos   inxExtra0   inxCartaInv  CondFim
+=removcartapos   inxExtra1   inxCarta1    CondVazios
+
+== Testar obter ocupados
+=obternumocup     inxExtra0   1
+=obternumocup	  inxExtra1   0
+
+== Checar nova string
+=parastring      inxExtra0   "--- --- PET ---"  CondOK
+
+== Testa insercao apos remocao ( checa integridade da estrutura pos-remocao )
+=insercartapos   inxExtra0  inxCarta1  NaipeCopas  RankAs  CondOK
+=insercartapos   inxExtra0  inxCarta4  NaipeCopas  RankTres  CondOK
+
+== Verifica se insercao funcionou
+=obtercartapos   inxExtra0  inxCarta1  NaipeCopas  RankAs  
+=obtercartapos   inxExtra0  inxCarta4  NaipeCopas  RankTres  
+
+== Finalmente, testa por string
+=parastring      inxExtra0  "VCA --- PET VC3" CondOK
+
+== Destruir extras
+=destruirextras	 inxExtra0
+=destruirextras  inxExtra1  
+
+== Finaliza
+=termina    
+
+// Fim

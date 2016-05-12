@@ -1,0 +1,12 @@
+08/nov/13 ; 2 ; estudar ; Estudar e discutir os slides de instrumentação disponibilizados em aula
+14/nov/13 ; 2 ; revisar script de teste ; Revisamos os casos de teste utilizados no trabalho
+14/nov/13 ; 1 ; revisar especificações ; Revisamos a especificação do módulo interface e freecell
+18/nov/13 ; 2 ; estudar ; Estudar o módulo Conta e Cespdin 
+25/nov/13 ; 3 ; codificar; Inicio do desenvolvimento do módulo Freecell
+27/nov/13 ; 2 ; codificar; Fim do desenvolvimento do módulo Freecell
+28/nov/13 ; 2 ; testar ; Teste e correção do módulo Freecell
+29/nov/13 ; 4 ; codificar; Desenvolvimento do módulo Main
+30/nov/13 ; 3 ; testar ; Teste e correção do módulo Main
+31/nov/13 ; 1 ; documentar ; Documentação dos scripts de teste
+01/dez/13 ; 3 ; diagnosticar e corrigir os problemas encontrados ; fora diagnosticados e corrigidos erros no trabalho inteiro
+

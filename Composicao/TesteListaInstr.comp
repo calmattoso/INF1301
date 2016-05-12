@@ -1,0 +1,26 @@
+# Teste do módulo lista com DEBUG usando a biblioteca contendo o arcabouço
+
+[Diretorios]
+
+Nome        =  TesteListaInstr
+PathDefault =  ..\Fontes
+err         =  ..\Produto
+obj         =  ..\Objetos
+c           =  ..\Fontes
+h           =  ..\Fontes
+def         =  ..\Tabelas
+
+[Modulos]
+Lista       /D_DEBUG
+Lista_Instr /D_DEBUG
+TestLis     /D_DEBUG
+
+[BuildInicio]
+/OUT:..\produto\TRAB4-3.exe
+/INCREMENTAL:NO
+/MACHINE:IX86
+
+[BuildFim]
+ArcaboucoTeste.lib
+
+[Fim]

@@ -1,0 +1,6 @@
+/OUT:..\produto\TRAB4-7.exe
+/INCREMENTAL:NO
+/MACHINE:IX86
+carta.obj  lista.obj  visivel.obj  testvis.obj  
+ArcaboucoTeste.lib
+

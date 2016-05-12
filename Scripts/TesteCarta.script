@@ -1,0 +1,105 @@
+// Script:    TesteCarta.script
+// Autor:     Carlos Lima Mattoso
+// Data:      11/out/2013
+// Propósito: Testar funções do módulo carta
+//
+
+// Inicialização do ambiente de testes
+
+== Declarar constante
+=declararparm    NULL             int   0
+
+== Declarar as cartas usadas
+=declararparm    inxCarta0        int   0
+=declararparm    inxCarta1        int   1
+=declararparm    inxCarta2        int   2
+=declararparm    inxCarta3        int   3
+=declararparm    inxCarta4        int   4
+=declararparm    inxCarta5        int   5
+=declararparm    inxCarta6        int   6
+=declararparm    inxCarta7        int   7
+
+== Declarar os valores dos Naipes 
+=declararparm    NaipePaus        int   0
+=declararparm    NaipeEspadas     int   1
+=declararparm    NaipeCopas       int   2
+=declararparm    NaipeOuros       int   3
+
+== Declarar os valores de alguns Ranks 
+=declararparm    RankAs           int   0
+=declararparm    RankDois         int   1
+=declararparm    RankTres         int   2
+=declararparm    RankQuatro       int   3
+=declararparm    RankDez          int   9
+=declararparm    RankRei          int   12
+
+== Declarar os valores das cores
+=declararparm    CorVerm          int   0
+=declararparm    CorPreta         int   1
+
+== Declarar condições de retorno
+=declararparm    CondOK           int   0
+=declararparm    CondIgual        int   1
+=declararparm    CondDiff         int   2
+=declararparm    CondMaior        int   3
+=declararparm    CondSucess       int   4 
+=declararparm    CondMenor        int   5
+=declararparm    CondAntece       int   6 
+
+// Execução dos testes
+
+== Inicializa o ambiente de testes
+=resetteste
+
+== Criar cartas
+=criarcarta    inxCarta0  NaipePaus     RankAs
+=criarcarta    inxCarta1  NaipeEspadas  RankDois
+=criarcarta    inxCarta2  NaipeCopas    RankTres
+=criarcarta    inxCarta3  NaipeOuros    RankQuatro
+=criarcarta    inxCarta4  NaipePaus     RankRei
+=criarcarta    inxCarta5  NaipeOuros    RankAs
+=criarcarta    inxCarta6  NaipeEspadas  RankDez
+
+== Testar obter naipe
+=obternaipe    inxCarta0  NaipePaus
+=obternaipe    inxCarta1  NaipeEspadas   
+=obternaipe    inxCarta2  NaipeCopas  
+=obternaipe    inxCarta3  NaipeOuros 
+
+== Comparar naipe
+=compararnaipe   inxCarta0   inxCarta0  CondIgual
+=compararnaipe   inxCarta0   inxCarta4  CondIgual
+=compararnaipe   inxCarta2   inxCarta3  CondDiff  
+
+== Comparar rank
+=compararrank    inxCarta0   inxCarta5  CondIgual
+=compararrank    inxCarta0   inxCarta1  CondAntece
+=compararrank    inxCarta1   inxCarta4  CondMenor  
+=compararrank    inxCarta4   inxCarta2  CondMaior
+=compararrank    inxCarta3   inxCarta2  CondSucess 
+
+== Comparar cor
+=compararnaipe   inxCarta0   inxCarta0  CondIgual
+=compararnaipe   inxCarta0   inxCarta4  CondIgual
+=compararnaipe   inxCarta1   inxCarta3  CondDiff  
+=compararnaipe   inxCarta4   inxCarta2  CondDiff 
+
+== Testar conversao para string
+=parastring      inxCarta0   "PPA"  CondOK
+=parastring      inxCarta1   "PE2"  CondOK
+=parastring      inxCarta2   "VC3"  CondOK
+=parastring      inxCarta3   "VO4"  CondOK
+=parastring      inxCarta4   "PPK"  CondOK
+=parastring      inxCarta5   "VOA"  CondOK
+=parastring      inxCarta6   "PET"  CondOK
+
+== Destruir algumas cartas
+=destruircarta    inxCarta0
+=destruircarta    inxCarta1
+=destruircarta    inxCarta2
+=destruircarta    inxCarta3
+=destruircarta    inxCarta4
+=destruircarta    inxCarta5
+=destruircarta    inxCarta6
+
+// Fim

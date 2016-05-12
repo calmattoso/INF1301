@@ -1,0 +1,27 @@
+# Teste do módulo embaralhamento usando a biblioteca contendo o arcabouço
+
+[Diretorios]
+
+Nome        =  TesteEmbaralhamento
+PathDefault =  ..\Fontes
+err         =  ..\Produto
+obj         =  ..\Objetos
+c           =  ..\Fontes
+h           =  ..\Fontes
+def         =  ..\Tabelas
+
+[Modulos]
+Carta
+Lista
+Embaralhamento
+TestEmb
+
+[BuildInicio]
+/OUT:..\produto\TRAB4-4.exe
+/INCREMENTAL:NO
+/MACHINE:IX86
+
+[BuildFim]
+ArcaboucoTeste.lib
+
+[Fim]

@@ -1,0 +1,76 @@
+//////////////////////////////////////////////////////////////////////
+// Contadores acumulados, gerado: 2013/12/02-12:20:24
+//////////////////////////////////////////////////////////////////////
+
+CriarElemento, Entrou\=22
+CriarElemento, Faltou memo'ria\=2
+IrFinalLista, Entrou\=2
+IrInicioLista, Entrou\=4
+LIS_AvancarElementoCorrente, Achou para frente\=5
+LIS_AvancarElementoCorrente, Achou para tras\=4
+LIS_AvancarElementoCorrente, Atingiu final\=1
+LIS_AvancarElementoCorrente, Atingiu inicio\=1
+LIS_AvancarElementoCorrente, Avanco para frente\=7
+LIS_AvancarElementoCorrente, Avanco para tras\=6
+LIS_AvancarElementoCorrente, Avancou pro comeco\=2
+LIS_AvancarElementoCorrente, Avancou pro fim\=2
+LIS_AvancarElementoCorrente, Entrou\=15
+LIS_AvancarElementoCorrente, Lista vazia\=1
+LIS_AvancarElementoCorrente, Loop para frente\=11
+LIS_AvancarElementoCorrente, Loop para tras\=10
+LIS_AvancarElementoCorrente, Sem avanco\=1
+LIS_CriarLista, Entrou\=14
+LIS_CriarLista, Faltou memo'ria\=1
+LIS_DestruirLista, Entrou\=4
+LIS_EsvaziarLista, Entrou\=5
+LIS_EsvaziarLista, Loop de esvaziar\=7
+LIS_ExcluirElemento, Desencadeia a direita\=2
+LIS_ExcluirElemento, Desencadeia a esquerda\=1
+LIS_ExcluirElemento, Entrou\=4
+LIS_ExcluirElemento, Lista vazia\=1
+LIS_ExcluirElemento, Remove final\=1
+LIS_ExcluirElemento, Remove origem\=2
+LIS_InserirElementoAntes, Entre dois elems\=1
+LIS_InserirElementoAntes, Entrou\=3
+LIS_InserirElementoAntes, Faltou memoria\=1
+LIS_InserirElementoAntes, Lista vazia\=1
+LIS_InserirElementoApos, Entre dois elems\=1
+LIS_InserirElementoApos, Entrou\=19
+LIS_InserirElementoApos, Faltou memoria\=1
+LIS_InserirElementoApos, Final da lista\=9
+LIS_InserirElementoApos, Lista vazia\=8
+LIS_ObterNumeroElementos, Entrou\=2
+LIS_ObterValor, Elemento com valor\=16
+LIS_ObterValor, Elemento vazio\=3
+LIS_ObterValor, Entrou\=19
+LIS_ProcurarValor, Achou elemento\=1
+LIS_ProcurarValor, Entrou\=3
+LIS_ProcurarValor, Lista vazia\=1
+LIS_ProcurarValor, Loop de procura\=2
+LIS_ProcurarValor, Nao achou elemento\=1
+LIS_VerificarLista, Anterior nulo em elemento nao origem\=1
+LIS_VerificarLista, Cabeca inexistente\=1
+LIS_VerificarLista, Elemento corrente nao esta na lista\=1
+LIS_VerificarLista, Elemento nao aponta para cabeca da lista\=1
+LIS_VerificarLista, Entrou\=19
+LIS_VerificarLista, Erro no encadeamento com elemento anterior\=1
+LIS_VerificarLista, Erro no tipo de espaco de dados de cabeca\=1
+LIS_VerificarLista, Erro no tipo de espaco de dados de elemento\=1
+LIS_VerificarLista, Espaco de dados de cabeca nao integro\=1
+LIS_VerificarLista, Espaco de dados de elemento nao integro\=2
+LIS_VerificarLista, Lista nao vazia sem elemento corrente\=1
+LIS_VerificarLista, Lista nao vazia sem elemento final\=1
+LIS_VerificarLista, Lista nao vazia sem elemento origem\=1
+LIS_VerificarLista, Lista vazia com elemento corrente\=1
+LIS_VerificarLista, Lista vazia com elemento final.\=1
+LIS_VerificarLista, Lista vazia com elemento origem\=1
+LIS_VerificarLista, Loop de verificacao dos elementos\=18
+LIS_VerificarLista, Quantidade de elementos diferente da esperada\=1
+LIS_VerificarLista, Seguinte nulo em elemento nao final\=1
+LiberarElemento, Entrou\=10
+LiberarElemento, ExcluirValor\=10
+LimparCabeca, Entrou\=18
+
+//////////////////////////////////////////////////////////////////////
+// Fim arquivo de contadores acumulados
+//////////////////////////////////////////////////////////////////////

@@ -1,0 +1,75 @@
+////////////////////////////////////////////////
+//
+// Declaração de contadores de verificação
+// Conta módulo Lista marcado
+//
+///////////////////////////////////////////////
+
+	LIS_CriarLista, Entrou
+	LIS_CriarLista, Faltou memo'ria
+	LIS_DestruirLista, Entrou
+	LIS_EsvaziarLista, Entrou
+	LIS_EsvaziarLista, Loop de esvaziar
+	LIS_InserirElementoAntes, Entrou
+	LIS_InserirElementoAntes, Faltou memoria
+	LIS_InserirElementoAntes, Lista vazia
+	LIS_InserirElementoAntes, Entre dois elems
+	LIS_InserirElementoApos, Entrou
+	LIS_InserirElementoApos, Faltou memoria
+	LIS_InserirElementoApos, Lista vazia
+	LIS_InserirElementoApos, Entre dois elems
+	LIS_InserirElementoApos, Final da lista
+	LIS_ExcluirElemento, Entrou
+	LIS_ExcluirElemento, Lista vazia
+	LIS_ExcluirElemento, Desencadeia a esquerda
+	LIS_ExcluirElemento, Remove origem
+	LIS_ExcluirElemento, Desencadeia a direita
+	LIS_ExcluirElemento, Remove final
+	LIS_ObterValor, Entrou
+	LIS_ObterValor, Elemento vazio
+	LIS_ObterValor, Elemento com valor
+	IrInicioLista, Entrou
+	IrFinalLista, Entrou
+	LIS_AvancarElementoCorrente, Entrou
+	LIS_AvancarElementoCorrente, Lista vazia
+	LIS_AvancarElementoCorrente, Avanco para frente
+	LIS_AvancarElementoCorrente, Loop para frente
+	LIS_AvancarElementoCorrente, Atingiu final
+	LIS_AvancarElementoCorrente, Achou para frente
+	LIS_AvancarElementoCorrente, Avancou pro fim
+	LIS_AvancarElementoCorrente, Avanco para tras
+	LIS_AvancarElementoCorrente, Loop para tras
+	LIS_AvancarElementoCorrente, Atingiu inicio
+	LIS_AvancarElementoCorrente, Achou para tras
+	LIS_AvancarElementoCorrente, Avancou pro comeco
+	LIS_AvancarElementoCorrente, Sem avanco
+	LIS_ProcurarValor, Entrou
+	LIS_ProcurarValor, Lista vazia
+	LIS_ProcurarValor, Loop de procura
+	LIS_ProcurarValor, Achou elemento
+	LIS_ProcurarValor, Nao achou elemento
+	LIS_ObterNumeroElementos, Entrou
+	LiberarElemento, Entrou
+	LiberarElemento, ExcluirValor
+	CriarElemento, Entrou
+	CriarElemento, Faltou memo'ria
+	LimparCabeca, Entrou
+	LIS_VerificarLista, Entrou
+	LIS_VerificarLista, Cabeca inexistente
+	LIS_VerificarLista, Espaco de dados de cabeca nao integro
+	LIS_VerificarLista, Erro no tipo de espaco de dados de cabeca
+	LIS_VerificarLista, Lista vazia com elemento origem
+	LIS_VerificarLista, Lista vazia com elemento final.
+	LIS_VerificarLista, Lista vazia com elemento corrente
+	LIS_VerificarLista, Lista nao vazia sem elemento origem
+	LIS_VerificarLista, Lista nao vazia sem elemento final
+	LIS_VerificarLista, Lista nao vazia sem elemento corrente
+	LIS_VerificarLista, Loop de verificacao dos elementos
+	LIS_VerificarLista, Espaco de dados de elemento nao integro
+	LIS_VerificarLista, Erro no tipo de espaco de dados de elemento
+	LIS_VerificarLista, Elemento nao aponta para cabeca da lista
+	LIS_VerificarLista, Erro no encadeamento com elemento anterior
+	LIS_VerificarLista, Anterior nulo em elemento nao origem
+	LIS_VerificarLista, Seguinte nulo em elemento nao final
+	LIS_VerificarLista, Quantidade de elementos diferente da esperada
+	LIS_VerificarLista, Elemento corrente nao esta na lista

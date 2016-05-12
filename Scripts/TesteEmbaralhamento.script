@@ -1,0 +1,142 @@
+// Script:    TesteEmbaralhamento.script
+// Autor:     Carlos Lima Mattoso
+// Data:      13/out/2013
+// Propósito: Testar funções do módulo de embaralhamento
+//
+
+// Inicializa o ambiente de testes
+
+== Declarar constantes
+=declararparm    null             int   0
+=declararparm    true			  int 	1
+=declararparm    false			  int   0
+
+== Declarar os baralhos usados
+=declararparm    inxBaralho0      int   0
+=declararparm    inxBaralho1      int   1
+
+== Declarar os valores dos Naipes 
+=declararparm    NaipePaus        int   0
+=declararparm    NaipeEspadas     int   1
+=declararparm    NaipeCopas       int   2
+=declararparm    NaipeOuros       int   3
+
+== Declarar os valores dos Ranks 
+=declararparm    RankAs           int   0
+=declararparm    RankDois         int   1
+=declararparm    RankTres         int   2
+=declararparm    RankQuatro       int   3
+=declararparm    RankCinco        int   4
+=declararparm    RankSeis         int   5
+=declararparm    RankSete         int   6
+=declararparm    RankOito         int   7
+=declararparm    RankNove         int   8
+=declararparm    RankDez          int   9
+=declararparm    RankValete       int   10
+=declararparm    RankRainha       int   11
+=declararparm    RankRei          int   12
+
+== Declarar condições de retorno
+=declararparm    CondOK             int   0
+=declararparm    CondCarNaoExiste   int   1
+=declararparm    CondFim            int   2
+=declararparm    CondVazia          int   3
+=declararparm    CondFaltouMemoria  int   4 
+
+// Execução dos testes
+
+== Inicializa o teste
+=resetteste
+
+== Criar extras
+=criarbaralho    inxBaralho0
+=criarbaralho    inxBaralho1
+
+== Tenta embaralhar baralho vazio
+=embaralhar      inxBaralho0  CondVazia
+
+== Insere algumas cartas de Paus
+=inserircarta	 inxBaralho0  NaipePaus  RankAs
+=inserircarta	 inxBaralho0  NaipePaus  RankDois
+=inserircarta	 inxBaralho0  NaipePaus  RankTres
+=inserircarta	 inxBaralho0  NaipePaus  RankQuatro
+=inserircarta	 inxBaralho0  NaipePaus  RankCinco
+
+== Tenta embaralhar baralho com menos de 52 cartas
+=embaralhar	 inxBaralho0  CondFim
+
+== Insere as cartas restantes de Paus
+=inserircarta	 inxBaralho0  NaipePaus  RankSeis
+=inserircarta	 inxBaralho0  NaipePaus  RankSete
+=inserircarta	 inxBaralho0  NaipePaus  RankOito
+=inserircarta	 inxBaralho0  NaipePaus  RankNove
+=inserircarta	 inxBaralho0  NaipePaus  RankDez
+=inserircarta	 inxBaralho0  NaipePaus  RankValete
+=inserircarta	 inxBaralho0  NaipePaus  RankRainha
+=inserircarta	 inxBaralho0  NaipePaus  RankRei
+
+== Insere as cartas de Espadas
+=inserircarta	 inxBaralho0  NaipeEspadas  RankAs
+=inserircarta	 inxBaralho0  NaipeEspadas  RankDois
+=inserircarta	 inxBaralho0  NaipeEspadas  RankTres
+=inserircarta	 inxBaralho0  NaipeEspadas  RankQuatro
+=inserircarta	 inxBaralho0  NaipeEspadas  RankCinco
+=inserircarta	 inxBaralho0  NaipeEspadas  RankSeis
+=inserircarta	 inxBaralho0  NaipeEspadas  RankSete
+=inserircarta	 inxBaralho0  NaipeEspadas  RankOito
+=inserircarta	 inxBaralho0  NaipeEspadas  RankNove
+=inserircarta	 inxBaralho0  NaipeEspadas  RankDez
+=inserircarta	 inxBaralho0  NaipeEspadas  RankValete
+=inserircarta	 inxBaralho0  NaipeEspadas  RankRainha
+=inserircarta	 inxBaralho0  NaipeEspadas  RankRei
+
+== Insere as cartas de Copas
+=inserircarta	 inxBaralho0  NaipeCopas  RankAs
+=inserircarta	 inxBaralho0  NaipeCopas  RankDois
+=inserircarta	 inxBaralho0  NaipeCopas  RankTres
+=inserircarta	 inxBaralho0  NaipeCopas  RankQuatro
+=inserircarta	 inxBaralho0  NaipeCopas  RankCinco
+=inserircarta	 inxBaralho0  NaipeCopas  RankSeis
+=inserircarta	 inxBaralho0  NaipeCopas  RankSete
+=inserircarta	 inxBaralho0  NaipeCopas  RankOito
+=inserircarta	 inxBaralho0  NaipeCopas  RankNove
+=inserircarta	 inxBaralho0  NaipeCopas  RankDez
+=inserircarta	 inxBaralho0  NaipeCopas  RankValete
+=inserircarta	 inxBaralho0  NaipeCopas  RankRainha
+=inserircarta	 inxBaralho0  NaipeCopas  RankRei
+
+== Insere as cartas de Ouros
+=inserircarta	 inxBaralho0  NaipeOuros  RankAs
+=inserircarta	 inxBaralho0  NaipeOuros  RankDois
+=inserircarta	 inxBaralho0  NaipeOuros  RankTres
+=inserircarta	 inxBaralho0  NaipeOuros  RankQuatro
+=inserircarta	 inxBaralho0  NaipeOuros  RankCinco
+=inserircarta	 inxBaralho0  NaipeOuros  RankSeis
+=inserircarta	 inxBaralho0  NaipeOuros  RankSete
+=inserircarta	 inxBaralho0  NaipeOuros  RankOito
+=inserircarta	 inxBaralho0  NaipeOuros  RankNove
+=inserircarta	 inxBaralho0  NaipeOuros  RankDez
+=inserircarta	 inxBaralho0  NaipeOuros  RankValete
+=inserircarta	 inxBaralho0  NaipeOuros  RankRainha
+=inserircarta	 inxBaralho0  NaipeOuros  RankRei
+
+== Copia o segundo baralho para o primeiro
+=copiarbaralho   inxBaralho1  inxBaralho0
+
+== Checa copia
+=checarigual	 inxBaralho0  inxBaralho1  true
+
+== Testa embaralhar
+=embaralhar 	 inxBaralho0  CondOK
+
+== Checa se estao diferentes
+=checarigual	 inxBaralho0  inxBaralho1  false
+
+== Destroi os baralhos
+=destruirbaralho  inxBaralho0
+=destruirbaralho   inxBaralho1
+
+== Finaliza
+=termina
+
+// Fim

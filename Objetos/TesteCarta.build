@@ -1,0 +1,6 @@
+/OUT:..\Produto\TRAB4-1.exe
+/INCREMENTAL:NO
+/MACHINE:IX86
+carta.obj  testcar.obj  
+ArcaboucoTeste.lib
+

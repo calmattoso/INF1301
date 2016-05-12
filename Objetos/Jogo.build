@@ -1,0 +1,6 @@
+/OUT:..\Produto\TRAB4-8.exe
+/INCREMENTAL:NO
+/MACHINE:IX86
+carta.obj  lista.obj  embaralhamento.obj  visivel.obj  ordenada.obj  
+extras.obj  interface.obj  freecell.obj  main.obj  
+

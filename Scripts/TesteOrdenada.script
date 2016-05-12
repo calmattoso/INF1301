@@ -1,0 +1,101 @@
+// Script:  TesteOrdenada.script
+// Autor:   Felipe Filgueiras Argento
+// Data:    14/out/2013
+// Propósito:   Testar funções do módulo Ordenada
+
+
+// Inicializa o ambiente de testes
+
+== Declarar as ordenadas usadas
+=declararparm   inxOrdenada0	  int   0
+=declararparm   inxOrdenada1	  int   1
+=declararparm   inxOrdenada2	  int   2
+
+== Declarar as cartas usadas
+=declararparm    inxCarta0        int   0
+=declararparm    inxCarta1        int   1
+=declararparm    inxCarta2        int   2
+=declararparm    inxCarta3        int   3
+
+== Declarar os valores dos Naipes 
+=declararparm    NaipePaus        int   0
+=declararparm    NaipeEspadas     int   1
+=declararparm    NaipeCopas       int   2
+=declararparm    NaipeOuros       int   3
+
+== Declarar os valores dos Ranks 
+=declararparm    RankAs           int   0
+=declararparm    RankDois         int   1
+=declararparm    RankTres         int   2
+=declararparm    RankQuatro       int   3
+=declararparm    RankCinco        int   4
+=declararparm    RankSeis         int   5
+=declararparm    RankSete         int   6
+=declararparm    RankOito         int   7
+=declararparm    RankNove         int   8
+=declararparm    RankDez          int   9
+=declararparm    RankValete       int   10
+=declararparm    RankRainha       int   11
+=declararparm    RankRei          int   12
+
+== Declarar condições de retorno
+=declararparm   condRetOK             int 0
+=declararparm   condRetNaoOK          int 1
+=declararparm   condRetFaltouMemoria  int 2
+=declararparm   condRetCartaInvalida  int 3
+
+// Execução dos testes
+
+== Inicializa
+=resetteste
+
+== Cria Ordenada
+=criarordenada  inxOrdenada0
+=criarordenada  inxOrdenada1
+=criarordenada  inxOrdenada2
+
+== Inserir Cartas em Ordenadas
+=inserircarta   inxOrdenada0    NaipePaus     RankAs     condRetOK
+=inserircarta   inxOrdenada0    NaipePaus     RankDois   condRetOK
+=inserircarta   inxOrdenada0    NaipeEspadas  RankTres   condRetCartaInvalida
+=inserircarta   inxOrdenada1    NaipeOuros    RankTres   condRetCartaInvalida
+=inserircarta   inxOrdenada1    NaipeOuros    RankAs     condRetOK
+
+== Obter carta no topo de uma ordenada
+=obtertopo  inxOrdenada0	NaipePaus	RankDois
+=obtertopo  inxOrdenada1    NaipeOuros  RankAs
+
+== Obter topo vazio
+=obtertpvazio inxOrdenada2
+
+== Converte uma ordenada para uma string
+=parastring inxOrdenada0  "PPA PP2"  condRetOK
+=parastring inxOrdenada1  "VOA"      condRetOK
+=parastring inxOrdenada2  ""		 condRetOK
+
+== Enche a ordenada inxOrdenada0
+=inserircarta   inxOrdenada0    NaipePaus     RankTres    condRetOK
+=inserircarta   inxOrdenada0    NaipePaus     RankQuatro  condRetOK
+=inserircarta   inxOrdenada0    NaipePaus     RankCinco   condRetOK
+=inserircarta   inxOrdenada0    NaipePaus     RankSeis    condRetOK
+=inserircarta   inxOrdenada0    NaipePaus     RankSete    condRetOK
+=inserircarta   inxOrdenada0    NaipePaus     RankOito    condRetOK
+=inserircarta   inxOrdenada0    NaipePaus     RankNove    condRetOK
+=inserircarta   inxOrdenada0    NaipePaus     RankDez     condRetOK
+=inserircarta   inxOrdenada0    NaipePaus     RankValete  condRetOK
+=inserircarta   inxOrdenada0    NaipePaus     RankRainha  condRetOK
+=inserircarta   inxOrdenada0    NaipePaus     RankRei     condRetOK
+
+== Verifica pior caso de string
+=parastring     inxOrdenada0  "PPA PP2 PP3 PP4 PP5 PP6 PP7 PP8 PP9 PPT PPJ PPQ PPK" condRetOK
+
+==Destroi Ordenadas
+=destruirordenada inxOrdenada0
+=destruirordenada inxOrdenada1
+=destruirordenada inxOrdenada2
+
+== Finaliza
+=termina
+
+
+// Fim

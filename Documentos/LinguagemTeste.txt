@@ -1,0 +1,134 @@
+Linguagem de Teste
+
+>Módulo Lista
+
+=resetteste                                                     Efetuar reset de teste       
+=criarlista  inxLista								            Testa criar uma lista 
+=destruirlista  inxLista							            Testa destruir determinada lista
+=esvaziarlista  inxLista							            Testa esvalizar determinada lista
+=inselemantes  inxLista  int  CondRetEsp			            Testa inserir elemento (int) em determinada lista, antes do atual elemento corrente.
+=inselemapos  inxLista  int CondRetEsp				            Testa inserir elemento (int) em determinada lista, depois do atual elemento corrente.
+=procurarvalor inxLista inxValor CondRetEsp                     Testa procura de valor determinado em uma dada lista
+=obternumelems inxLista numElem                                 Testa se a lista especificada tem o número passado de elementos
+=obtervalorelem  inxLista  int CondretPonteiro		            Testa obter valor (int) de determinado elemento corrente, e o compara a valor especificado.
+=excluirelem   inxLista  CondRetEsp					            Testa exclusão de elemento da lista especificada
+=irinicio  inxLista									            Vai para o início da lista especificada
+=irfinal   inxLista									            Vai para o final da lista especificada 		
+=avancarelem   inxLista  numElem CondRetEsp			            Testa avançar o elemento corrente de <numElem> posições
+=verificarlista  inxLista    						            Verifica se a lista respeita uma série de assertivas estruturais e de integridade de espaço de memória.
+=deturparlista  inxLista  modoDeturpacao			            Causa alguma deturpação à estrutura de determinada lista.
+            
+inxLista											            Índice da lista no vetor de listas utilizado no teste
+inxValor                                                        Índice do valor a ser procurado no vetor de valores; é o índice da ordem em que foi inserido
+int												                Um valor inteiro qualquer		
+CondretPonteiro                                                 Valor que se espera de um dado ponteiro
+numElem 												        Certa quantidade de elementos
+CondRetEsp 											            Condição de retorno que se espera do teste em questão
+modoDeturpacao 												    Código da deturpação a ser feita sobre a estrutura da lista
+												
+												
+/********************************************************************************************************/
+
+>Módulo Carta
+
+=resetteste	 												    Efetuar reset de teste
+=criarcarta inxCarta Naipe Rank 							    Testa criar uma carta com naipe e rank especificados
+=destruircarta inxCarta										    Testa destruir determinada carta
+=obternaipe inxCarta										    Testa obter o naipe de determinada carta
+=compararnaipe inxCarta inxCarta2 CondRetEsp				    Testa a comparação de naipes entre duas cartas criadas
+=compararrank inxCarta inxCarta2 CondRetEsp					    Testa a comparação de ranks entre duas cartas criadas
+=compararcor inxCarta inxCarta2 CondRetEsp					    Testa a comparação de cores entre duas cartas criadas
+=parastring inxCarta string CondRetEsp						    Testa a conversão da estrutura carta para o formato de string
+    
+inxCartaX													    Índice da carta no vetor de cartas utilizado no teste
+Naipe 														    Naipe utilizado para o teste 		
+Rank 														    Rank utilizado para o teste
+CondRetEsp 													    Condição de retorno que se espera do teste
+string 														    String esperada na conversão da estrutura carta
+
+/********************************************************************************************************/
+
+>Módulo Ordenada
+
+=resetteste	 												    Efetuar reset de teste
+=criarordenada inxOrdenada									    Testa criar instância de sequência ordenada
+=destruirordenada inxOrdenada								    Testa destruir uma instância de sequência ordenada criada previamente
+=inserircarta inxOrdenada naipe rank CondRetEsp				    Testa inserir uma carta de naipe e rank especificados em uma instância de sequência ordenada criada previamente
+=obtertopo inxOrdenada naipeEsp rankEsp						    Testa obter a carta que se encontra no topo de uma sequência ordenada previamente criada e inserida
+=obtertpvazio inxOrdenada									    Testa obter a carta que se encontra no topo de uma sequência ordenada previamente criada, porém vazia
+=parastring inxOrdenada string CondRetEsp					    Testa a conversão da estrutura carta para o formato de string
+=termina													    Finaliza o ambiente de testes
+    
+inxOrdenada												        Índice da ordenada no vetor de ordenadas utilizado no teste
+Naipe 														    Naipe utilizado para o teste 		
+Rank 														    Rank utilizado para o teste
+CondRetEsp 													    Condição de retorno que se espera do teste
+rankEsp 													    Rank que se espera do teste
+string 														    String esperada na conversão da estrutura carta
+
+/********************************************************************************************************/
+
+>Módulo Visível
+
+=resetteste	 													Efetuar reset de teste
+=criarvisivel inxVisivel										Testa criar instância de sequência visível
+=destruirvisivel inxVisivel 									Testar destruir uma instância de sequência visível
+=inserircarta inxVisivel naipe rank CondRetEsp modo		        Testa inserir uma carta de naipe e rank especificados em uma instância de sequência visivel criada previamente
+=removercarta inxVisivel CondRetEsp   							Testa remover uma carta de uma instância de lista visível previamente criada e inserida
+=obtercartapos inxVisivel inxCarta naipeEsp rankEsp		        Testa obter a carta que se encontra a uma determinada posição do topo de uma instância de lista visível
+=obtervaziopos inxVisivel inxCarta 								Testa obter a carta que se encontra a uma determinada posição do topo de uma instância de lista visível vazia
+=parastring inxVisivel string CondRetEsp						Testa a conversão da estrutura carta para o formato de string
+=termina														Finaliza o ambiente de testes
+
+inxVisivelX														Índice da visivel no vetor de visiveis utilizado no teste
+inxCartaX														Índice da carta no vetor de cartas utilizado no teste
+Naipe 															Naipe utilizado para o teste 		
+Rank 															Rank utilizado para o teste
+Modo 															Modo de inserção na lista, com ordem ou sem
+CondRetEsp 														Condição de retorno que se espera do teste
+rankEsp 														Rank que se espera do teste
+naipeEsp														Naipe que se espera do teste
+string 															String esperada na conversão da estrutura carta
+
+/********************************************************************************************************/
+
+>Módulo Extra
+
+=resetteste	 													Efetuar reset de teste
+=criarextras inxExtras											Testa criar instância de espaços extras
+=destruirExtras inxExtras										Testa destruir uma instância de espaços extras
+=obternumocup inxExtras numOcupEsp								Testa obter o número de espaços extras ocupados
+=insercartapos inxExtras inxCarta naipe rank CondRetEsp	        Testa inserir uma carta em uma posição de uma instância de espaços extras
+=removcartapos inxExtras inxCarta CondRetEsp					Testa remover uma carta em uma posição de uma instância de espaços extras
+=obtercartapos inxExtras inxCarta naipeEsp rankEsp			    Testar obter uma carta de uma posição de uma instância de espaços extras
+=obtervaziapos inxExtras inxCarta 								Testar obter uma carta de uma posição de uma instância de espaços extras vazia
+=parastring inxExtras string CondRetEsp						    Testa a conversão da estrutura carta para o formato de string
+=termina														Finaliza o ambiente de testes
+
+inxExtrasX														Índice do espaço extra no vetor de espaços extras utilizado no teste
+inxCartaX														Índice da carta no vetor de cartas utilizado no teste
+Naipe 															Naipe utilizado para o teste 		
+Rank 															Rank utilizado para o teste
+CondRetEsp 														Condição de retorno que se espera do teste
+rankEsp 														Rank que se espera do teste
+naipeEsp														Naipe que se espera do teste
+string 															String esperada na conversão da estrutura carta
+
+/********************************************************************************************************/
+
+>Módulo Embaralhamento
+
+=embaralhar inxBaralho CondRetEsp							    Testa o embaralhamento de cartas
+=criarbaralho inxBaralho 									    Testa a criação de um baralho
+=destruirbaralho inxBaralho 								    Testa a destruição de um baralho criado
+=inserircarta inxBaralho  naipe  rank 						    Testa a inserção de uma carta em um baralho
+=copiarbaralho inxBaralho  inxBaralho2 						    Testa copiar um baralho
+=checarigual  inxBaralho  inxBaralho2 CondRetEsp 			    Testar a comparação entre dois baralhos
+=termina													    Finaliza o ambiente de testes
+    
+inxBaralhoX													    Índice do baralho no vetor de baralhos utilizado no teste
+Naipe 														    Naipe utilizado para o teste 		
+Rank 														    Rank utilizado para o teste
+CondRetEsp 													    Condição de retorno que se espera do teste
+
+/********************************************************************************************************/

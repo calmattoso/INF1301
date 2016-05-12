@@ -1,0 +1,6 @@
+/OUT:..\produto\TRAB4-2.exe
+/INCREMENTAL:NO
+/MACHINE:IX86
+lista.obj  testlis.obj  
+ArcaboucoTeste.lib
+

@@ -1,0 +1,172 @@
+// Script:    TesteListaDebug.script
+// Autor:     Carlos Lima Mattoso
+// Data:      1/dez/2013 ( modificação )
+// Propósito: Testar o módulo lista genérica duplamente encadeada, atingindo completeza de cobertura de
+//			  aretas
+//
+
+== Inicializar valores
+=declararparm   lista0  int 0
+=declararparm   lista1  int 1
+=declararparm   lista2  int 2
+=declararparm   lista3  int 3
+=declararparm   lista4  int 4
+
+=declararparm   OK             int  0
+=declararparm   ListaVazia     int  1
+=declararparm   FimLista       int  2
+=declararparm   NaoAchou       int  3
+=declararparm   FaltouMemoria  int  4
+
+=declararparm   pNULL          int  0
+=declararparm   pNaoNULL       int  1
+
+=declararparm    CriterioExibir int   1
+
+== Iniciar contagem
+=inicializarcontadores  ""
+=lercontadores          "..\\scripts\\ListaNormal"
+=iniciarcontagem
+
+== Criar a lista 0
+=criarlista      lista0   1
+
+== Verificar ObterValor relativo a lista vazia
+=obtervalorelem  lista0   50     pNULL
+
+== Inserir elemento em lista vazia e tenta procurá-lo
+=inselemantes    lista0   0   OK
+=procurarvalor   lista0   0      OK
+=obtervalorelem  lista0   0   pNaoNULL
+
+== Inserir elemento após primeiro
+=inselemapos     lista0   1   OK
+=obtervalorelem  lista0   1   pNaoNULL
+
+== Inserir elemento antes do último
+=inselemantes    lista0   2   OK
+=obtervalorelem  lista0   2   pNaoNULL
+
+== Excluir elemento do meio
+=obtervalorelem  lista0   2   pNaoNULL
+=excluirelem     lista0             OK
+
+== Excluir elemento do início
+=obtervalorelem  lista0   0   pNaoNULL
+=excluirelem     lista0             OK
+
+== Excluir elemento final, único 
+=obtervalorelem  lista0   1   pNaoNULL
+=excluirelem     lista0             OK
+
+== Ver se a lista ficou vazia
+=obtervalorelem  lista0   50     pNULL
+
+== Destruir a lista
+=destruirlista   lista0
+
+== Criar uma lista, tenta excluir e avancar
+=criarlista      lista1   1
+=excluirelem     lista1   ListaVazia
+=avancarelem     lista1   0   ListaVazia
+
+== Insere dois elementos na lista
+=inselemapos     lista1   0   OK
+=inselemapos     lista1   1   OK
+
+== Esvaziar a lista e ver se ficou vazia
+=esvaziarlista   lista1
+=obtervalorelem  lista1   0     pNULL
+=obternumelems   lista1   0
+
+== Destruir a lista
+=destruirlista   lista1
+
+== Criar uma lista com quatro elementos
+=criarlista      lista2   1
+=inselemapos     lista2   0   OK
+=inselemapos     lista2   1   OK
+=inselemapos     lista2   2   OK
+=inselemapos     lista2   3   OK
+
+== Faz avanco nulo em lista
+=avancarelem     lista2   0   OK
+
+== Verificar tamanho da lista
+=obternumelems   lista2   4
+
+== Testar procura por elemento que nao esta na lista
+=procurarvalor   lista2   1   NaoAchou
+
+
+== Verificar a lista de trás para diante
+=irfinal         lista2
+=obtervalorelem  lista2   3   pNaoNULL
+=avancarelem     lista2   -1     OK
+=obtervalorelem  lista2   2   pNaoNULL
+=avancarelem     lista2   -1     OK
+=obtervalorelem  lista2   1   pNaoNULL
+=avancarelem     lista2   -1     OK
+=obtervalorelem  lista2   0   pNaoNULL
+=avancarelem     lista2   -1     FimLista
+
+== Verificar a lista de frente para trás
+=obtervalorelem  lista2   0   pNaoNULL
+=avancarelem     lista2   1      OK
+=obtervalorelem  lista2   1   pNaoNULL
+=avancarelem     lista2   1      OK
+=obtervalorelem  lista2   2   pNaoNULL
+=avancarelem     lista2   1      OK
+=obtervalorelem  lista2   3   pNaoNULL
+=avancarelem     lista2   1      FimLista
+
+== Verifica numero de espaços alocados
+=obternumeroespacosalocados    5
+
+== Verificar a lista andando demais de trás para diante
+=avancarelem     lista2   -10    FimLista
+=obtervalorelem  lista2   0   pNaoNULL
+
+== Verificar a lista andando demais de frente para trás
+=avancarelem     lista2   10     FimLista
+=obtervalorelem  lista2   3   pNaoNULL
+
+== Testar ir pro inicio da lista
+=irinicio        lista2 
+
+== Testar ir pro fim da lista
+=irfinal         lista2
+
+== Avanca e insere entre dois elementos
+=irinicio	     lista2
+=avancarelem     lista2   1     OK
+=inselemapos     lista2   0  OK
+
+
+== Destruir a lista
+=destruirlista   lista2
+
+== Procura em lista vazia
+=criarlista     lista3    1
+=procurarvalor   lista3   0  ListaVazia
+
+== Limita quantidade de memoria e tenta alocar elemento
+=limitarmemoriadisponivel  1
+
+== Tenta inserir com memoria limitada
+=inselemapos   lista3  4  FaltouMemoria
+=inselemantes  lista3  4  FaltouMemoria
+=destruirlista lista3
+
+== Limita qtd de memoria e tenta alocar
+=criarlista   lista4   0
+
+== Terminar controlar contadores
+=pararcontagem
+=verificarcontagens    0
+
+== Terminar contagem
+=gravarcontadores "..\\scripts\\TesteListaDebug.estat"
+=terminarcontadores
+
+// fim
