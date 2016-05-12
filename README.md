@@ -70,7 +70,7 @@ Este projeto apresenta-se organizado nos seguintes módulos, cujos arquivos font
       módulos FreeCell e Interface que também são providos em anexo. Estes módulos
       dependem intrinsicamente de interação do jogador ou de aleatoriedade (na hora 
       de se gerar o baralho). Portanto, não foram testados.
-      >> Código para executáveis:  8
+      > Código para executáveis:  8
 
 ### Outros
    - `documentos`
@@ -136,11 +136,13 @@ Sintaxe do comando mov:
 
 Por exemplo:
 
-      mov vis1 ext1 
-      Moveria a carta do topo da primeira sequência visível para o primeiro espaço extra (caso possível)
+   > mov vis1 ext1 
 
-      mov ext1 ord
-      Moveria a carta do espaço extra 1 para a sequência ordenada correspondente a seu naipe (caso possível)
+Moveria a carta do topo da primeira sequência visível para o primeiro espaço extra (caso possível)
+
+   > mov ext1 ord
+   
+Moveria a carta do espaço extra 1 para a sequência ordenada correspondente a seu naipe (caso possível)
 
 A cada movimento feito, é exibida uma visão atualizada da mesa.	
 
